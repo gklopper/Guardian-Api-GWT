@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.gu.api.gwt</groupId>
+	<artifactId>gu-api-gwt</artifactId>
+	<name>gu-api-gwt</name>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<properties>
+		<gwtVersion>1.6.4</gwtVersion>
+		<javaVersion>1.5</javaVersion>
+		<junitVersion>4.0</junitVersion>
+		<guApiParserVersion>0.0.1-SNAPSHOT</guApiParserVersion>
+		<servletVersion>2.4</servletVersion>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.0.2</version>
+				<configuration>
+					<source>${javaVersion}</source>
+					<target>${javaVersion}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/client/**</include>
+					<include>**/*.gwt.xml</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
+	
+	<repositories>
+		<repository>
+			<id>mvn-repository.googlecode.com</id>
+			<name>Maven repository on Google code</name>
+			<url>http://mvn-repository.googlecode.com/svn/trunk</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>${servletVersion}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.gu.api.parser</groupId>
+			<artifactId>gu-api-parser</artifactId>
+			<version>${guApiParserVersion}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-servlet</artifactId>
+			<version>${gwtVersion}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junitVersion}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+</project>
