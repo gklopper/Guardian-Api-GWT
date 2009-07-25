@@ -42,14 +42,11 @@ public class GuardianApiServiceImpl extends RemoteServiceServlet implements Guar
 	@Override
 	public void init() throws ServletException {
 		super.init();
-		try {
-					
-			Properties props = new Properties();
-			props.load(getClass().getClassLoader().getResourceAsStream("apiKey.properties"));
-			apiKey = props.getProperty("apiKey");
-		} catch (IOException e) {
-			throw new ServletException("Cannot load apiKey.properties this file needs to be created in the classpath");
-		}
+			apiKey = getServletConfig().getInitParameter("apiKey");
+		
+			if (apiKey == null) {
+				throw new ServletException("Init Parameter 'apiKey' must be set for " + getClass().getSimpleName());
+			}
 	}
 	
 	public Content getContent(Integer contentId) throws GuApiException {
