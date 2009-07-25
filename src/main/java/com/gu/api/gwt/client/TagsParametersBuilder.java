@@ -1,7 +1,10 @@
 package com.gu.api.gwt.client;
 
+import java.io.Serializable;
 
-public class TagsParametersBuilder {
+
+@SuppressWarnings("serial")
+public class TagsParametersBuilder implements Serializable{
 	
 	private TagsParameters tagParameters = new TagsParameters();
 	

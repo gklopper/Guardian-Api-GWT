@@ -7,7 +7,6 @@ import java.net.URLEncoder;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Properties;
 import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
@@ -20,8 +19,6 @@ import com.gu.api.gwt.client.GuApiException;
 import com.gu.api.gwt.client.GuardianApiService;
 import com.gu.api.gwt.client.SearchParameters;
 import com.gu.api.gwt.client.TagsParameters;
-
-
 import com.gu.api.parser.client.Content;
 import com.gu.api.parser.client.Search;
 import com.gu.api.parser.client.Tags;

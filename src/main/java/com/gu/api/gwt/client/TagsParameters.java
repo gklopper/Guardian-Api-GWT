@@ -1,6 +1,9 @@
 package com.gu.api.gwt.client;
 
-public class TagsParameters {
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+public class TagsParameters implements Serializable{
 	
 	private String q;
 	private Integer count;
